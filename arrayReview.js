@@ -4,16 +4,32 @@ var threeItems = [1,2,3];
 
   //code here
 
+function last(arr) {
+  return arr[arr.length - 1];
+}
+
+alert(last(threeItems));
+
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
 
-//Loop through evenArray removing all values that aren't even 
+//Loop through evenArray removing all values that aren't even
 var evenArray = [1,2,3,6,22,98,45,23,22,12];
 
   //code here
+
+function returnOdds(arr) {
+  var oddsArray = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
+      oddsArray.push(arr[i]);
+    }
+  }
+  return oddsArray;
+}
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -28,6 +44,14 @@ var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
   //code here
 
+function checkRandom(arr) {
+  var rando = getRandomArbitrary();
+  if (arr.indexOf(rando) !== -1) {
+    return true;
+  }
+  return false;
+}
+
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -38,6 +62,11 @@ var first = [1,2,3,4,5];
 var second;
 
   //code here
+
+second = [1,2,3,4,5];
+
+second.push(6);
+second.push(7);
 
 alert(first) //[1,2,3,4,5];
 alert(second) //[1,2,3,4,5,6,7];
@@ -53,16 +82,36 @@ var sentence = "Dev Mountain is the best"
 
   //code here
 
+function longest(str) {
+  var strArr = str.split(" ");
+  longestWord = strArr[0];
+  for (var i = 1; i < strArr.length; i++){
+    if (strArr[i].length > longestWord.length) {
+      longestWord = strArr[i];
+    }
+  }
+  return longestWord;
+}
+
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
 
-//write a function called capitalize that takes in the myPoem variable and capitalizes every word 
+//write a function called capitalize that takes in the myPoem variable and capitalizes every word
 var myPoem = 'What is a jQuery but a misunderstood object?'
 //What is a jQuery but a misunderstood object? --> What Is A JQuery But A Misunderstood Object?
 
   //code here
+
+function capitalize(string) {
+  var capitalizedString = "";
+  var stringArray = string.split(" ");
+  for (var i = 0; i < stringArray.length; i++) {
+    capitalizedString += (stringArray[i][0].toUpperCase() + stringArray[i].slice(1) + " ");
+  }
+  return capitalizedString.slice(0, capitalizedString.length - 1);
+}
 
 
 
@@ -72,3 +121,17 @@ var myPoem = 'What is a jQuery but a misunderstood object?'
 
 var theOdyssey = "function expression or function declaration? Tis an obvious choice";
 //Write a function called vowelCounter that takes in a string (theOdyssey) and returns how many vowels are in that string.
+
+var vowels = "aeiou";
+
+function vowelCounter(string) {
+  var vowelString = "";
+  for (var i = 0; i < string.length; i++) {
+    for (var j = 0; j < vowels.length; j++) {
+      if (string[i] === vowels[j]) {
+        vowelString += string[i];
+      }
+    }
+  }
+  return vowelString.length;
+}
